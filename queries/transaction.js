@@ -7,21 +7,19 @@ var _get = function(tid) {
 			.toParam();
 };
 
-var _add = function(aid, source_cur, dest_cur, source_amount, dest_amount, rate) {
+var _add = function(uid, cid, aid, amount) {
 	return squel.useFlavour('postgres').insert()
-			.into('transations')
-			.set('uid', source_cur)
-			.set('source_cur', source_cur)
-			.set('dest_cur', dest_cur)
-			.set('source_amount', source_amount)
-			.set('dest_amount', dest_amount)
-			.set('rate', rate)
+			.into('transactions')
+			.set('uid', uid)
+			.set('cid', cid)
+			.set('aid', aid)
+			.set('amount', amount)
 			.toParam();
 };
 
 var _all = function() {
 	return squel.useFlavour('postgres').select()
-			.from('transations')
+			.from('transactions')
 			.toString();
 };
 

@@ -1,5 +1,5 @@
 var express = require('express');
-var users = require('./queries/users')
+var users = require('./queries/users');
 var router = express.Router();
 
 router.get('/', function(req, res) {
@@ -29,6 +29,11 @@ router.post('/add', function(req, res) {
 	});
 });
 
+router.post('/addform', function(req, res) {
+	req.pg.query(users.add(req.body.username, req.body.fullname, req.body.email, req.body.phone, 1), (err, results) => {
+		res.redirect('/thanks.html')
+	});
+});
 
 
 module.exports = router;

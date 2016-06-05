@@ -23,9 +23,10 @@
     <meta name="description" content="A portfolio template that uses Material Design Lite.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>GiB App</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="font.css">
+    <link rel="stylesheet" href="material.grey-pink.min.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="icon.css">
 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -42,8 +43,8 @@
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="index.html">Sign Up</a>
-                  
+                    <a class="mdl-navigation__link is-active" href="index.html">App</a>
+                    <a class="mdl-navigation__link" href="index.html">Sign Up</a>
                     <a class="mdl-navigation__link" href="about.html">About</a>
                     <a class="mdl-navigation__link" href="team.html">Team</a>
                 </nav>
@@ -51,48 +52,37 @@
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link is-active" href="index.html">Sign Up</a>
+                <a class="mdl-navigation__link is-active" href="index.html">App</a>
+                <a class="mdl-navigation__link" href="index.html">Sign Up</a>
                 <a class="mdl-navigation__link" href="about.html">About</a>
                 <a class="mdl-navigation__link" href="team.html">Team</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
-            <div class="mdl-grid portfolio-max-width portfolio-contact">
+            <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+                    <div class="mdl-cell mdl-cell--8-col">
+                        <h2 class="mdl-card__title-text">Account Info</h2>
 
-                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Sign Up</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <p>
-                            GiB Currency Exchange will be ready soon! Sign up for a Beta account and we'll get back to you when we're ready.
-                        </p>
-                        <form action="/users/addform" class="" method="post">
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h4> Account Holder </h4> <p id="fname"></p>
+                             <h4> Balance </h4> 
+                                <h5><div id="balance"></div></h5>
+                                <div id="cad"></div>
+                                <div id="gbp"></div>
+                                <div id="aud"></div>
+                              <h4> Add Cash </h4>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="fullname" name="fullname">
-                                <label class="mdl-textfield__label" for="name">Full Name</label>
-                                <span class="mdl-textfield__error">Letters and spaces only</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" pattern="[A-Z,a-z,0-9]*" type="text" id="username" name="username">
-                                <label class="mdl-textfield__label" for="username">Username</label>
-                                <span class="mdl-textfield__error">Numbers and letters only</span>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="email" name="email">
-                                <label class="mdl-textfield__label" for="email">Email Address</label>
-                            </div>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" pattern="[0-9,-,+ ]*" type="text" id="phone" name="phone">
-                                <label class="mdl-textfield__label" for="phone">Phone Number (optional)</label>
-                                <span class="mdl-textfield__error">+ (plus), - (dash) and spaces are optional</span>
+                                <input class="mdl-textfield__input" pattern="[-,0-9]*" type="text" id="addcash" name="balance" value="10">
+                                <span class="mdl-textfield__error">integers only</span>
+                            <label class="mdl-textfield__label" id ="add" for="email" >Amount</label>
                             </div>
                             <p>
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="flipsub">
                                     Submit
                                 </button>
                             </p>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -110,6 +100,7 @@
         </main>
     </div>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script type="text/javascript" src="/m_app.js"></script>
 </body>
 
 </html>
