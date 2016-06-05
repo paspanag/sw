@@ -7,7 +7,7 @@ var account = require('./account');
 var currency = require('./currency');
 var app = express();
 
-app.use(express.static('h5bp'));
+app.use(express.static('public'));
 
 pg.defaults.user = 'peter';
 pg.defaults.password = 'admin1234';
@@ -24,6 +24,6 @@ pg.connect("postgres://localhost/postgres", function(err, client, done) {
 	app.use('/account', account);
 	app.use('/currency', currency);
 	app.listen(3000, function () {
-	  console.log('running');
+		console.log('running');
 	});
 });
