@@ -1,0 +1,20 @@
+{
+  "name": "gib",
+  "version": "1.0.0",
+  "description": "gib app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cash",
+    "exchange",
+    "forex"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mssql": "^3.3.0",
+  }
+}
